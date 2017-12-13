@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+
+    
+
+    <string name="en_us_textview_back">&lt;back</string>
+    <string name="en_us_textview_appoffer">Application wall</string>
+    <string name="en_us_textview_intergal">Integral&#62; </string>
+    <string name="en_us_textview_intergals">Integral wall</string>
+       <string name="en_us_textview_ad">Ad</string>
+        <string name="en_us_textview_point">Integral</string>
+      <string name="en_us_textview_current_intergals">Integral </string>
+    <string name="en_us_button_download">Download</string>
+     <string name="en_us_button_desc">Details</string>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</resources>

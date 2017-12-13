@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- button -->
+    <string name="zh_ch_textview_back">&lt;返回</string>
+    <string name="zh_ch_textview_appoffer">应用墙</string>
+    <string name="zh_ch_textview_intergal">积分墙&#62; </string>
+    <string name="zh_ch_textview_intergals">积分墙 </string>
+        <string name="zh_ch_textview_ad">广告</string>
+        <string name="zh_ch_textview_point">积分 </string>
+      <string name="zh_ch_textview_current_intergals">当前积分 </string>
+    <string name="zh_ch_button_download">免费下载</string>
+     <string name="zh_ch_button_desc">查看详情</string>
+
+</resources>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="zh_hk_textview_back">&lt;返回</string>
+    <string name="zh_hk_textview_appoffer">應用墻</string>
+    <string name="zh_hk_textview_intergal">積分墻&#62; </string>
+    <string name="zh_hk_textview_intergals">積分墻</string>
+    <string name="zh_hk_textview_ad">廣告</string>
+        <string name="zh_hk_textview_point">積分</string>
+      <string name="zh_hk_textview_current_intergals">當前積分</string>
+    <string name="zh_hk_button_download">免費下載</string>
+     <string name="zh_hk_button_desc">查看詳情</string>  
+    
+</resources>
