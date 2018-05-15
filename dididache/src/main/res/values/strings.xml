@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">DiDiDache</string>
+    <string name="hint_account">用户名</string>
+    <string name="hint_password">密码</string>
+    <string name="position">广州市</string>
+    <string name="xmy_login">司机登录</string>
+    <string name="xmy_forgetpwd">重置密码</string>
+    <string name="xmy_register">注 册</string>
+    <string name="Shuttle">接送乘客</string>
+    <string name="xmy_bindphone">绑定手机</string>
+    <string name="xmy_persioninfornation">个人信息</string>
+    <string name="xmy_order">订单信息</string>
+</resources>
