@@ -22,6 +22,7 @@ import android.widget.TextView;
 import java.util.List;
 
 /**
+ * 简单详情页
  * Created by USER on 2018/4/3.
  */
 
@@ -33,10 +34,13 @@ public class PercenterView extends BaseLinearLayout {
     private LayoutParams params;
     private BaseTitleView baseTitleView;
     private LinearLayout iconLinearLayout;
+    private LinearLayout underlineLinearLayout;
+    private LinearLayout unorderLinearLayout,orderLinearLayout;
     private ImageView img_icon;
     private ListView listView;
     private Button btn_chuche;
     private TextView text_Name,text_Number,text_TodayNumber;
+    private View unorderView,orderView;
     public PercenterView(Context _context) {
         super(_context);
         context = _context;
@@ -107,30 +111,26 @@ public class PercenterView extends BaseLinearLayout {
         iconLinearLayout.addView(receivablesLayout,params);
 
         //司机今日接单数
-        LinearLayout todayNumber=new LinearLayout(mContext);
-        todayNumber.setOrientation(LinearLayout.VERTICAL);
+        unorderLinearLayout=new LinearLayout(mContext);
+        unorderLinearLayout.setOrientation(LinearLayout.VERTICAL);
         params=new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.MATCH_PARENT);
-        receivablesLayout.addView(todayNumber,params);
+        receivablesLayout.addView(unorderLinearLayout,params);
 
         text_Number=new TextView(mContext);
         //time_phone.setBackgroundColor(Color.BLUE);
-        text_Number.setText("18单");
+        text_Number.setText("待接单");
         text_Number.setTextSize(16);
         text_Number.setTextColor(Color.BLACK);
         text_Number.setGravity(Gravity.CENTER);
         params=new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.MATCH_PARENT,1);
         params.gravity=Gravity.CENTER;
-        todayNumber.addView(text_Number,params);
+        unorderLinearLayout.addView(text_Number,params);
 
-        text_TodayNumber=new TextView(mContext);
-        //time_phone.setBackgroundColor(Color.BLUE);
-        text_TodayNumber.setText("今日接单");
-        text_TodayNumber.setTextSize(16);
-        text_TodayNumber.setTextColor(Color.rgb(154,151,145));
-        text_TodayNumber.setGravity(Gravity.CENTER);
-        params=new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.MATCH_PARENT,1);
-        params.gravity=Gravity.CENTER;
-        todayNumber.addView(text_TodayNumber,params);
+
+        unorderView=new View(mContext);
+        unorderView.setBackgroundColor(Color.rgb(26,180,255));
+        params=new LayoutParams(marginSize*2,marginSize/8);
+        unorderLinearLayout.addView(unorderView,params);
 
 
 
@@ -148,33 +148,29 @@ public class PercenterView extends BaseLinearLayout {
         linearLayout.addView(img_line,params);
 
 
-        //今日营收
-        LinearLayout revenueLinearLayout=new LinearLayout(mContext);
-        revenueLinearLayout.setOrientation(LinearLayout.VERTICAL);
+        //已接单
+        orderLinearLayout=new LinearLayout(mContext);
+        orderLinearLayout.setOrientation(LinearLayout.VERTICAL);
         layoutParams=new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT,
                 RelativeLayout.LayoutParams.MATCH_PARENT);
         layoutParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
-        receivablesLayout.addView(revenueLinearLayout,layoutParams);
+        receivablesLayout.addView(orderLinearLayout,layoutParams);
 
         text_Number=new TextView(mContext);
         //time_phone.setBackgroundColor(Color.BLUE);
-        text_Number.setText("234元");
+        text_Number.setText("已接单");
         text_Number.setTextSize(16);
         text_Number.setTextColor(Color.BLACK);
         text_Number.setGravity(Gravity.CENTER);
         params=new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.MATCH_PARENT,1);
         params.gravity=Gravity.CENTER;
-        revenueLinearLayout.addView(text_Number,params);
+        orderLinearLayout.addView(text_Number,params);
 
-        text_TodayNumber=new TextView(mContext);
-        //time_phone.setBackgroundColor(Color.BLUE);
-        text_TodayNumber.setText("今日收入");
-        text_TodayNumber.setTextSize(16);
-        text_TodayNumber.setTextColor(Color.rgb(154,151,145));
-        text_TodayNumber.setGravity(Gravity.CENTER);
-        params=new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.MATCH_PARENT,1);
-        params.gravity=Gravity.CENTER;
-        revenueLinearLayout.addView(text_TodayNumber,params);
+        orderView=new View(mContext);
+        orderView.setBackgroundColor(Color.rgb(26,180,255));
+        params=new LayoutParams(marginSize*2,marginSize/8);
+        orderView.setVisibility(View.GONE);
+        orderLinearLayout.addView(orderView,params);
 
 
         //乘客信息
@@ -203,7 +199,14 @@ public class PercenterView extends BaseLinearLayout {
 //        layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT);
 //        chucheRelativeLayout.addView(btn_chuche,layoutParams);
     }
-
+    public void personUnderline(LinearLayout linearLayout){
+        underlineLinearLayout=new LinearLayout(mContext);
+        params=new LayoutParams(marginSize*2,marginSize/8);
+        params.leftMargin=marginSize/2;
+        params.rightMargin=marginSize/2;
+        underlineLinearLayout.setBackgroundResource(createDrawable("xmy_underline"));
+        linearLayout.addView(underlineLinearLayout,params);
+    }
     public BaseTitleView getTitle(){
         return new BaseTitleView(context) {
             int width = 0;
@@ -254,5 +257,16 @@ public class PercenterView extends BaseLinearLayout {
     public ImageView getPersonCenter(){
         return baseTitleView.backIV;
     }
-
+    public View getUnorderView(){
+        return unorderView;
+    }
+    public View getorderView(){
+        return orderView;
+    }
+    public LinearLayout getUnorderLinearLayout(){
+        return unorderLinearLayout;
+    }
+    public LinearLayout getOrderLinearLayout(){
+        return orderLinearLayout;
+    }
 }

@@ -68,6 +68,8 @@ public class ShuttlePassengerActivity extends AppCompatActivity implements AMapN
     private RouteOverLay mRouteOverlay;
     private ImageView img_personCenter;
     private TextView btn_cancel;
+    //抢单，出发，到达出发地，确认上车，到达目的地
+    private Button btn_robbing,btn_outset,btn_start,btn_confirm,btn_confirmend;
     /**
      * 途径点坐标集合
      */
@@ -88,11 +90,8 @@ public class ShuttlePassengerActivity extends AppCompatActivity implements AMapN
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
         //ShuttleView shuttleView=new ShuttleView(this);
         setContentView(R.layout.activity_main);
-//        FragmentManager fm = getSupportFragmentManager();
-//        FragmentTransaction tx = fm.beginTransaction();
-//
-//        tx.replace(shuttleView.getId(), new SupportMapFragment());
         initNavi();
+        //btn_robbing=(Button)findViewById()
         img_personCenter=(ImageView)findViewById(R.id.xmy_personcenter);
         btn_cancel=(TextView)findViewById(R.id.btn_cancel);
         btn_cancel.setOnClickListener(new View.OnClickListener() {

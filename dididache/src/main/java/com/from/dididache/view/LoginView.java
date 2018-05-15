@@ -6,6 +6,7 @@ import android.text.InputFilter;
 import android.text.InputType;
 import android.util.AttributeSet;
 import android.view.Gravity;
+import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 import com.from.dididache.R;
 
 /**
+ * 登录页面
  * Created by USER on 2018/4/3.
  */
 
@@ -191,14 +193,13 @@ public class LoginView extends BaseLinearLayout {
 
         //立即注册
         RelativeLayout registerRe=new RelativeLayout(mContext);
-
+        registerRe.setVisibility(View.GONE);
         layoutParams=new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,
                 ((int)(marginSize*2)));
         layoutParams.topMargin=marginSize;
         loginLinearLayout.addView(registerRe,layoutParams);
 
         text_register=new TextView(mContext);
-
         text_register.setText("立即注册");
         text_register.setTextSize(17);
         text_register.setTextColor(Color.rgb(26,180,255));

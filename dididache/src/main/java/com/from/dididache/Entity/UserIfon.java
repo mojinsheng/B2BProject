@@ -7,7 +7,9 @@ package com.from.dididache.Entity;
 public class UserIfon {
     private String uername;
     private String startPosition;
-
+    private String endPostition;
+    private String toDayDate;
+    private String money;
     public String getUername() {
         return uername;
     }
@@ -40,6 +42,11 @@ public class UserIfon {
         this.toDayDate = toDayDate;
     }
 
-    private String endPostition;
-    private String toDayDate;
+    public String getMoney() {
+        return money;
+    }
+
+    public void setMoney(String money) {
+        this.money = money;
+    }
 }

@@ -17,12 +17,13 @@ public class UserInfoView extends BaseLinearLayout{
     private Context context;
 
     private LinearLayout userLinearLayout,timeLinearLayout,currentLinearLayout,endLinearLayout;
-    private LinearLayout mContainerLayout;
+    private LinearLayout mContainerLayout,moneyLinearLayout;
     private LayoutParams params;
     private TextView textView,textViewUserDesc;
     private TextView textView2,textViewTime;
     private TextView textView3,textViewCurrent;
     private TextView textView4,textViewEnd;
+    private TextView textViewMoney;
     private  RelativeLayout receivablesRela;
     private RelativeLayout.LayoutParams layoutParams;
     public UserInfoView(Context _context) {
@@ -60,10 +61,11 @@ public class UserInfoView extends BaseLinearLayout{
         userLinearLayout.addView(textView,params);
 
         textViewUserDesc=new TextView(context);
-        textViewUserDesc.setTextSize(17);
+        textViewUserDesc.setTextSize(20);
         textViewUserDesc.getPaint().setFakeBoldText(true);
         textViewUserDesc.setGravity(Gravity.CENTER);
         params=new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
+        params.leftMargin=marginSize/3;
         userLinearLayout.addView(textViewUserDesc,params);
 
          receivablesRela=new RelativeLayout(mContext);
@@ -101,6 +103,7 @@ public class UserInfoView extends BaseLinearLayout{
         textViewTime.getPaint().setFakeBoldText(true);
         textViewTime.setGravity(Gravity.CENTER);
         params=new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
+        params.leftMargin=marginSize/3;
         timeLinearLayout.addView(textViewTime,params);
 
 
@@ -124,6 +127,7 @@ public class UserInfoView extends BaseLinearLayout{
         textViewCurrent.getPaint().setFakeBoldText(true);
         textViewCurrent.setGravity(Gravity.CENTER);
         params=new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
+        params.leftMargin=marginSize/3;
         currentLinearLayout.addView(textViewCurrent,params);
 
         //目的位置
@@ -146,7 +150,31 @@ public class UserInfoView extends BaseLinearLayout{
         textViewEnd.getPaint().setFakeBoldText(true);
         textViewEnd.setGravity(Gravity.CENTER);
         params=new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
+        params.leftMargin=marginSize/3;
         endLinearLayout.addView(textViewEnd,params);
+
+        //金额
+        moneyLinearLayout=new LinearLayout(context);
+        endLinearLayout.setOrientation(LinearLayout.HORIZONTAL);
+        params=new LayoutParams(LayoutParams.MATCH_PARENT,marginSize);
+        mContainerLayout.addView(moneyLinearLayout,params);
+
+
+        textView4=new TextView(context);
+        textView4.setText("金额:");
+        textView4.setTextSize(20);
+        textView4.getPaint().setFakeBoldText(true);
+        textView4.setGravity(Gravity.CENTER);
+        params=new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
+        moneyLinearLayout.addView(textView4,params);
+
+        textViewMoney=new TextView(context);
+        textViewMoney.setTextSize(20);
+        textViewMoney.getPaint().setFakeBoldText(true);
+        textViewMoney.setGravity(Gravity.CENTER);
+        params=new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
+        params.leftMargin=marginSize/3;
+        moneyLinearLayout.addView(textViewMoney,params);
     }
     public TextView gettextViewUserDesc(){
         return textViewUserDesc;
@@ -160,6 +188,7 @@ public class UserInfoView extends BaseLinearLayout{
     public TextView gettextViewCurrent(){
         return textViewCurrent;
     }
+    public TextView gettextViewMoney(){return textViewMoney;}
     public RelativeLayout getReceivablesRela(){
         return receivablesRela;
     }

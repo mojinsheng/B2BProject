@@ -55,10 +55,11 @@ public class UserAdapter extends BaseAdapter {
 
             convertView =new UserInfoView(context);
             holder.t_userName = ((UserInfoView) convertView).gettextViewUserDesc();
-            holder.t_Time=((UserInfoView)convertView).gettextViewTime();
+            holder.t_time=((UserInfoView)convertView).gettextViewTime();
             holder.t_start=((UserInfoView)convertView).gettextViewCurrent();
             holder.t_end=((UserInfoView)convertView).gettextViewEnd();
             holder.r_receivablesRel=((UserInfoView)convertView).getReceivablesRela();
+            holder.t_money=((UserInfoView)convertView).gettextViewMoney();
             convertView.setTag(holder);
 
         } else {
@@ -69,9 +70,10 @@ public class UserAdapter extends BaseAdapter {
         }
 
         holder.t_userName.setText(userIfon.getUername());
-        holder.t_Time.setText(userIfon.getToDayDate());
+        holder.t_time.setText(userIfon.getToDayDate());
         holder.t_start.setText(userIfon.getStartPosition());
         holder.t_end.setText(userIfon.getEndPostition());
+        holder.t_money.setText(userIfon.getMoney());
 //        holder.mContainerLayout.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -87,9 +89,10 @@ public class UserAdapter extends BaseAdapter {
     }
     public class ViewHolder {
         public TextView t_userName;
-        public TextView t_Time;
+        public TextView t_time;
         public TextView t_start;
         public TextView t_end;
+        public TextView t_money;
         public RelativeLayout  r_receivablesRel;
                 ;
     }
