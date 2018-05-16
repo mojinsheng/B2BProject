@@ -12,6 +12,8 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.from.molibrary.res.EfunResourceUtil;
+
 /**
  * 简单详情页
  * Created by USER on 2018/4/3.
@@ -93,7 +95,7 @@ public class PercenterView extends BaseLinearLayout {
         iconContentLayouta.addView(text_Name,params);
 
 
-        //今日收款
+        //待接单
         RelativeLayout receivablesLayout=new RelativeLayout(context);
         //receivablesLayout.setOrientation(LinearLayout.HORIZONTAL);
         params=new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT,2);
@@ -101,7 +103,7 @@ public class PercenterView extends BaseLinearLayout {
         params.rightMargin=marginSize;
         iconLinearLayout.addView(receivablesLayout,params);
 
-        //司机今日接单数
+        //待接单
         unorderLinearLayout=new LinearLayout(mContext);
         unorderLinearLayout.setOrientation(LinearLayout.VERTICAL);
         params=new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.MATCH_PARENT);
@@ -109,7 +111,7 @@ public class PercenterView extends BaseLinearLayout {
 
         text_Number=new TextView(mContext);
         //time_phone.setBackgroundColor(Color.BLUE);
-        text_Number.setText("待接单");
+        text_Number.setText(EfunResourceUtil.findStringByName(mContext,"xmy_text_unorder"));
         text_Number.setTextSize(16);
         text_Number.setTextColor(Color.BLACK);
         text_Number.setGravity(Gravity.CENTER);
@@ -149,7 +151,7 @@ public class PercenterView extends BaseLinearLayout {
 
         text_Number=new TextView(mContext);
         //time_phone.setBackgroundColor(Color.BLUE);
-        text_Number.setText("已接单");
+        text_Number.setText(EfunResourceUtil.findStringByName(mContext,"xmy_text_onorder"));
         text_Number.setTextSize(16);
         text_Number.setTextColor(Color.BLACK);
         text_Number.setGravity(Gravity.CENTER);

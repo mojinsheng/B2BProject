@@ -9,6 +9,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.from.molibrary.res.EfunResourceUtil;
+
 /**
  * 显示余额
  * Created by USER on 2018/5/16.
@@ -95,7 +97,7 @@ public class MoneyoveView extends BaseLinearLayout {
 
         //提现
         btn_extract=new Button(mContext);
-        btn_extract.setText("提现");
+        btn_extract.setText(EfunResourceUtil.findStringByName(mContext,"xmy_btn_extactl"));
         btn_extract.setTextSize(25);
         btn_extract.setTextColor(Color.WHITE);
         btn_extract.getPaint().setFakeBoldText(true);

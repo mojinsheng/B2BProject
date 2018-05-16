@@ -24,7 +24,6 @@ public class ExtractMoneyActivity extends Activity {
         extractMoneyView=new ExtractMoneyView(this);
         setContentView(extractMoneyView);
         img_back=extractMoneyView.getBack();
-
         img_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

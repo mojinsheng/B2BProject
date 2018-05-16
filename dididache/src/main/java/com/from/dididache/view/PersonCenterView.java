@@ -8,6 +8,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.from.molibrary.res.EfunResourceUtil;
+
 /**
  * Created by USER on 2018/5/12.
  */
@@ -248,7 +250,7 @@ public class PersonCenterView extends BaseLinearLayout {
 
         //调整图标
         text_company=new TextView(mContext);
-        text_company.setText("小码蚁网络公司提供技术支持");
+        text_company.setText(EfunResourceUtil.findStringByName(mContext,"xmy_text_company"));
         text_company.setTextSize(16);
         text_company.setTextColor(Color.BLACK);
         text_company.setGravity(Gravity.CENTER);

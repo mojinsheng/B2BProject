@@ -14,6 +14,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.from.dididache.R;
+import com.from.molibrary.res.EfunResourceUtil;
 
 /**
  * 登录页面
@@ -162,7 +163,7 @@ public class LoginView extends BaseLinearLayout {
         loginLinearLayout.addView(forgetPwdRe,layoutParams);
 
         text_forget=new TextView(mContext);
-        text_forget.setText("忘记密码?");
+        text_forget.setText(EfunResourceUtil.findStringByName(mContext,"xmy_text_frogetpassword"));
         text_forget.setTextSize(16);
         text_forget.setTextColor(Color.BLACK);
         text_forget.setGravity(Gravity.CENTER);
@@ -183,7 +184,7 @@ public class LoginView extends BaseLinearLayout {
 
         btn_login=new Button(mContext);
         btn_login.setBackgroundColor(Color.rgb(26,180,255));
-        btn_login.setText("登录");
+        btn_login.setText(EfunResourceUtil.findStringByName(mContext,"xmy_btn_login"));
         btn_login.setTextColor(Color.WHITE);
         btn_login.setTextSize(20);
         params=new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT);
@@ -208,7 +209,7 @@ public class LoginView extends BaseLinearLayout {
         layoutParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
         registerRe.addView(text_register,layoutParams);
 
-        //技术团队
+        //小码蚁提供技术支持技术团队
         LinearLayout teamRelativeLayout=new LinearLayout(mContext);
         teamRelativeLayout.setOrientation(LinearLayout.VERTICAL);
         params=new LayoutParams(LayoutParams.MATCH_PARENT,
@@ -228,7 +229,7 @@ public class LoginView extends BaseLinearLayout {
                 RelativeLayout.LayoutParams.MATCH_PARENT);
         teamTextlinearLayout.addView(teamTextlinearRelativeLayout,layoutParams);
         TextView text_team=new TextView(mContext);
-        text_team.setText("小码蚁提供技术支持");
+        text_team.setText(EfunResourceUtil.findStringByName(mContext,"xmy_text_company"));
         text_team.setTextSize(16);
         text_team.setTextColor(Color.BLACK);
         text_team.setGravity(Gravity.CENTER);

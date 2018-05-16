@@ -11,8 +11,31 @@
     <string name="xmy_persioninfornation">个人信息</string>
     <string name="xmy_order">订单信息</string>
     <string name="xmy_moneyover">余额</string>
+    <string name="xmy_extractmoney">提取金额</string>
     <string name="xmy_moneyoverinfromation">余额明细</string>
+    <string name="xmy_extractallmoney">全部提现</string>
+
+    <string name="xmy_inpurmoney">请输入金额</string>
     <string name="xmy_mymoneyover">我的零钱</string>
     <string name="xmy_extrabtmoney">余额提现</string>
     <string name="xmy_moneydateils">余额明细</string>
+    <!--TextView显示的文字-->
+    <string name="xmy_text_phone">请输入手机号码</string>
+    <string name="xmy_text_company">小码蚁提供技术支持</string>
+    <string name="xmy_text_frogetpassword">忘记密码?</string>
+    <string name="xmy_text_unorder">待接单</string>
+    <string name="xmy_text_onorder">已接单</string>
+
+    <!--input hint文字显示-->
+    <string name="xmy_input_hint_phone">请输入手机号码</string>
+    <string name="xmy_input_hint_smscode">请输入短信验证码</string>
+    <string name="xmy_input_new_password">请输入新密码</string>
+    <!--button显示文字-->
+    <string name="xmy_btn_verificationphone">下一步,验证手机号</string>
+    <string name="xmy_btn_newpassword">下一步,设置新密码</string>
+    <string name="xmy_btn_login">登录</string>
+    <string name="xmy_btn_extactl">提现</string>
+
+    <!--弹出框显示标题-->
+    <string name="xmy_title_cancel">你确定要取消订单吗?</string>
 </resources>

@@ -1,11 +1,13 @@
 package com.from.dididache.activity;
 
 
+import android.content.DialogInterface;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
@@ -109,7 +111,23 @@ public class ShuttlePassengerActivity extends AppCompatActivity implements AMapN
         btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                AlertDialog dialog = new AlertDialog.Builder(ShuttlePassengerActivity.this)
+                        .setTitle("提示")//设置对话框的标题
+                        .setMessage("你确定要取消订单吗?")//设置对话框的内容
+                        //设置对话框的按钮
+                        .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                              finish();
+                            }
+                        }).create();
+                dialog.show();
             }
         });
         img_back.setOnClickListener(new View.OnClickListener() {

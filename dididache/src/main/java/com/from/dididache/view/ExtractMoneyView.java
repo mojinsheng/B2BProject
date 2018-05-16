@@ -12,8 +12,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.from.dididache.R;
+import com.from.molibrary.res.EfunResourceUtil;
 
 /**
+ * 提现界面View
  * Created by USER on 2018/5/16.
  */
 
@@ -50,7 +52,7 @@ public class ExtractMoneyView extends BaseLinearLayout {
         //提取金额的标签
         text_money=new TextView(mContext);
         text_money.setTextColor(Color.BLACK);
-        text_money.setText("提取金额");
+        text_money.setText(EfunResourceUtil.findStringByName(mContext,"xmy_extractmoney"));
         text_money.setTextSize(18);
         params=new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
         params.setMargins(marginSize,marginSize,marginSize,marginSize);
@@ -75,9 +77,10 @@ public class ExtractMoneyView extends BaseLinearLayout {
         params=new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.MATCH_PARENT);
         moneyLinearLayout.addView(text_showmoney,params);
 
+        //输入金额
         LineEditText e_inputName=new LineEditText(mContext);
         e_inputName.setBackgroundResource(0);
-        e_inputName.setHint("请输入金额");
+        e_inputName.setHint(EfunResourceUtil.findStringByName(mContext,"xmy_inpurmoney"));
         e_inputName.setSingleLine(true);
         e_inputName.setLines(R.color.start_button_color);
         params=new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT);
@@ -116,7 +119,7 @@ public class ExtractMoneyView extends BaseLinearLayout {
         //全部提现
         text_allmoney=new TextView(mContext);
         text_allmoney.setTextSize(16);
-        text_allmoney.setText("全部提现");
+        text_allmoney.setText(EfunResourceUtil.findStringByName(mContext,"xmy_extractallmoney"));
         text_allmoney.setTextColor(Color.rgb(96,109,124));
         params=new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
         params.leftMargin=marginSize/2;
@@ -124,7 +127,7 @@ public class ExtractMoneyView extends BaseLinearLayout {
 
         //提现
         btn_extract=new Button(mContext);
-        btn_extract.setText("提现");
+        btn_extract.setText(EfunResourceUtil.findStringIdByName(mContext,"xmy_btn_extactl"));
         btn_extract.setTextSize(25);
         btn_extract.setTextColor(Color.WHITE);
         btn_extract.getPaint().setFakeBoldText(true);

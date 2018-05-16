@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.from.dididache.R;
+import com.from.molibrary.res.EfunResourceUtil;
 
 /**
  * Created by USER on 2018/5/10.
@@ -68,7 +69,7 @@ public class ForgetPasswordView extends BaseLinearLayout {
 
         text_phone=new TextView(mContext);
 
-        text_phone.setText("请输入手机号码");
+        text_phone.setText(EfunResourceUtil.findStringByName(mContext,"xmy_text_phone"));
         text_phone.setTextSize(16);
         text_phone.setTextColor(Color.BLACK);
         text_phone.setGravity(Gravity.CENTER);
@@ -109,7 +110,7 @@ public class ForgetPasswordView extends BaseLinearLayout {
 
         e_inputName=new LineEditText(mContext);
         e_inputName.setBackgroundResource(0);
-        e_inputName.setHint("手机号码");
+        e_inputName.setHint(EfunResourceUtil.findStringByName(mContext,"xmy_input_hint_phone"));
         e_inputName.setSingleLine(true);
         e_inputName.setLines(R.color.start_button_color);
         params=new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT);
@@ -125,7 +126,7 @@ public class ForgetPasswordView extends BaseLinearLayout {
         //验证码
         e_smsNumber=new LineEditText(mContext);
         e_smsNumber.setBackgroundResource(0);
-        e_smsNumber.setHint("短信验证码");
+        e_smsNumber.setHint(EfunResourceUtil.findStringByName(mContext,"xmy_input_hint_smscode"));
         e_smsNumber.setSingleLine(true);
         e_smsNumber.setLines(R.color.start_button_color);
         params=new LayoutParams((int)(mWidth*0.6),LayoutParams.MATCH_PARENT);
@@ -142,7 +143,7 @@ public class ForgetPasswordView extends BaseLinearLayout {
         //新密码
         e_newpassword=new LineEditText(mContext);
         e_newpassword.setBackgroundResource(0);
-        e_newpassword.setHint("新登录密码");
+        e_newpassword.setHint(EfunResourceUtil.findStringByName(mContext,"xmy_input_new_password"));
         e_newpassword.setSingleLine(true);
         e_newpassword.setLines(R.color.start_button_color);
         params=new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT);
@@ -179,7 +180,7 @@ public class ForgetPasswordView extends BaseLinearLayout {
         underlineLinearLayout.setBackgroundResource(createDrawable("xmy_underline"));
         forgetPwdContentLinearLayout.addView(underlineLinearLayout,params);
 
-        //找回密码按钮
+        //下一步，验证手机号
         forgetBtnLinearLayout=new LinearLayout(mContext);
         forgetBtnLinearLayout.setBackgroundColor(Color.BLUE);
         params=new LayoutParams(LayoutParams.MATCH_PARENT,marginSize*2);
@@ -191,16 +192,16 @@ public class ForgetPasswordView extends BaseLinearLayout {
 
         btn_login=new Button(mContext);
         btn_login.setBackgroundColor(Color.rgb(26,180,255));
-        btn_login.setText("下一步，验证手机号");
+        btn_login.setText(EfunResourceUtil.findStringByName(mContext,"xmy_btn_verificationphone"));
         btn_login.setTextColor(Color.WHITE);
         btn_login.setTextSize(20);
         params=new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT);
         forgetBtnLinearLayout.addView(btn_login,params);
 
-        //设置验证码按钮
+        //设置新密码
         btn_Password=new Button(mContext);
         btn_Password.setBackgroundColor(Color.rgb(26,180,255));
-        btn_Password.setText("下一步，设置新密码");
+        btn_Password.setText(EfunResourceUtil.findStringByName(mContext,"xmy_btn_newpassword"));
         btn_Password.setTextColor(Color.WHITE);
         btn_Password.setTextSize(20);
         btn_Password.setVisibility(View.GONE);
