@@ -5,22 +5,25 @@ import android.graphics.Color;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 
 /**
- * Created by USER on 2018/5/12.
+ * 余额明细列表
+ * Created by USER on 2018/5/16.
  */
 
-public class OrderDetailsView extends BaseLinearLayout {
+public class MoneyDetalisView extends BaseLinearLayout {
+    private LinearLayout mContainerLayout;
     private BaseTitleView baseTitleView;
     private LayoutParams params;
-    private LinearLayout mContainerLayout,clientLinearLayout;
     private ListView listView;
-    public OrderDetailsView(Context context) {
+    public MoneyDetalisView(Context context) {
         super(context);
         init();
     }
     public void init(){
         this.setOrientation(LinearLayout.VERTICAL);
+        this.setBackgroundColor(Color.rgb(240,239,245));
         //标题
         baseTitleView=getTitle();
         params=new LayoutParams(LayoutParams.MATCH_PARENT,((int)(mHeight*0.0607)));
@@ -30,26 +33,20 @@ public class OrderDetailsView extends BaseLinearLayout {
         mContainerLayout=new LinearLayout(mContext);
         mContainerLayout.setOrientation(LinearLayout.VERTICAL);
         mContainerLayout.setBackgroundColor(Color.WHITE);
-        params=new LayoutParams(LayoutParams.MATCH_PARENT,(int)(mHeight*0.6));
-        params.setMargins(marginSize,marginSize*2,marginSize,0);
+        params=new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT);
+        //params.setMargins(marginSize,marginSize*3,marginSize,0);
         this.addView(mContainerLayout,params);
-
-        //乘客订单信息
-        clientLinearLayout=new LinearLayout(mContext);
-        params=new LayoutParams(LayoutParams.MATCH_PARENT,(int)(mHeight*0.56));
-        clientLinearLayout.setBackgroundColor(Color.rgb(255,255,255));
-        params.setMargins(marginSize,0,marginSize,marginSize);
-        mContainerLayout.addView(clientLinearLayout,params);
 
         listView=new ListView(mContext);
         params=new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT);
-        clientLinearLayout.addView(listView,params);
-    }
-    public ImageView getImgBcak(){
-        return baseTitleView.backIV;
+        mContainerLayout.addView(listView,params);
+
     }
     public ListView getListView(){
         return listView;
+    }
+    public ImageView getback(){
+        return baseTitleView.backIV;
     }
     public BaseTitleView getTitle(){
         return new BaseTitleView(mContext) {
@@ -57,7 +54,7 @@ public class OrderDetailsView extends BaseLinearLayout {
             int height = 0;
             @Override
             public String titleName() {
-                return "xmy_order";
+                return "xmy_moneydateils";
             }
 
             @Override
@@ -75,15 +72,15 @@ public class OrderDetailsView extends BaseLinearLayout {
             }
 
             @Override
-            public String getSetName() {
-                return null;
+            public int[] getSetSize() {
+                height = (int) ( marginSize);
+                width = LayoutParams.WRAP_CONTENT;
+                return new int[] { width, height };
             }
 
             @Override
-            public int[] getSetSize() {
-                height = (int) ( marginSize);
-                width = height;
-                return new int[] { width, height };
+            public String getSetName() {
+                return "";
             }
 
             @Override

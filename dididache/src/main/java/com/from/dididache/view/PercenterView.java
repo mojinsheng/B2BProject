@@ -1,14 +1,7 @@
 package com.from.dididache.view;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
@@ -18,8 +11,6 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import java.util.List;
 
 /**
  * 简单详情页
@@ -235,6 +226,16 @@ public class PercenterView extends BaseLinearLayout {
                 height = (int) ( marginSize);
                 width = height;
                 return new int[] { width, height };
+            }
+
+            @Override
+            public String getSetName() {
+                return null;
+            }
+
+            @Override
+            public boolean hasSetText() {
+                return false;
             }
 
             @Override

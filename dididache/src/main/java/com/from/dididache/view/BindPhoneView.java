@@ -172,6 +172,11 @@ public class BindPhoneView extends BaseLinearLayout {
             }
 
             @Override
+            public String getSetName() {
+                return null;
+            }
+
+            @Override
             public int[] getTitleSize() {
                 height = (int) ( marginSize*1.5);
                 width = (int) (marginSize*3.5);
@@ -190,6 +195,11 @@ public class BindPhoneView extends BaseLinearLayout {
                 height = (int) ( marginSize);
                 width = height;
                 return new int[] { width, height };
+            }
+
+            @Override
+            public boolean hasSetText() {
+                return false;
             }
 
             @Override

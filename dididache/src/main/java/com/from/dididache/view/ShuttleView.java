@@ -5,13 +5,10 @@ import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import com.amap.api.maps.SupportMapFragment;
 
 /**
  * Created by USER on 2018/4/4.
@@ -189,6 +186,16 @@ public class ShuttleView extends BaseLinearLayout {
                 height = (int) ( marginSize);
                 width = height;
                 return new int[] { width, height };
+            }
+
+            @Override
+            public String getSetName() {
+                return null;
+            }
+
+            @Override
+            public boolean hasSetText() {
+                return false;
             }
 
             @Override

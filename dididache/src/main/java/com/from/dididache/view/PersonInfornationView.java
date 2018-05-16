@@ -5,7 +5,6 @@ import android.graphics.Color;
 import android.view.Gravity;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 /**
@@ -229,6 +228,16 @@ public class PersonInfornationView extends BaseLinearLayout {
                 height = (int) ( marginSize);
                 width = height;
                 return new int[] { width, height };
+            }
+
+            @Override
+            public String getSetName() {
+                return null;
+            }
+
+            @Override
+            public boolean hasSetText() {
+                return false;
             }
 
             @Override

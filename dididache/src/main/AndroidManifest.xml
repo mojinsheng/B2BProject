@@ -64,6 +64,19 @@
             android:screenOrientation="portrait">
 
         </activity>
+        <activity android:name="com.from.dididache.activity.MoneyoveActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name="com.from.dididache.activity.ExtractMoneyActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.from.dididache.activity.MoneyDetailsActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.from.dididache.activity.OrderInfromationActivity"
+            android:screenOrientation="portrait">
+        </activity>
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="ed752015c2584a7a71623932f40bc6fb" />

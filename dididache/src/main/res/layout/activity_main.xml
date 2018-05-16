@@ -37,7 +37,7 @@
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
-                android:id="@+id/xmy_personcenter"
+                android:id="@+id/xmy_back"
                 android:layout_alignParentLeft="false"
                 android:background="@drawable/xmy_back"
                 />

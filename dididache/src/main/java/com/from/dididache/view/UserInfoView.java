@@ -1,7 +1,6 @@
 package com.from.dididache.view;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
@@ -13,7 +12,7 @@ import android.widget.TextView;
  * Created by USER on 2018/4/3.
  */
 
-public class UserInfoView extends BaseLinearLayout{
+public class UserInfoView extends BaseLinearLayout {
     private Context context;
 
     private LinearLayout userLinearLayout,timeLinearLayout,currentLinearLayout,endLinearLayout;

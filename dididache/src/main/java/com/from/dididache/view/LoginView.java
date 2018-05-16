@@ -2,12 +2,10 @@ package com.from.dididache.view;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.text.InputFilter;
 import android.text.InputType;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -282,6 +280,16 @@ public class LoginView extends BaseLinearLayout {
                 height = (int) ( marginSize);
                 width = height;
                 return new int[] { width, height };
+            }
+
+            @Override
+            public String getSetName() {
+                return null;
+            }
+
+            @Override
+            public boolean hasSetText() {
+                return false;
             }
 
             @Override

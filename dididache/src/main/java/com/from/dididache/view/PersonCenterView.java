@@ -12,18 +12,19 @@ import android.widget.TextView;
  * Created by USER on 2018/5/12.
  */
 
-public class PersonCenterView extends BaseLinearLayout{
+public class PersonCenterView extends BaseLinearLayout {
     private LinearLayout mContainerLayout,logoPhoneLayout,logoPhoneContentLayout;
     private LinearLayout bindphoneLinearLayout;
     private LayoutParams params;
     private BaseTitleView baseTitleView;
     private TextView text_name,text_bindphone;
-    private RelativeLayout mListRelativeLayout,mpersonRelativeLayout,orderRelativeLayout;
+    private RelativeLayout mListRelativeLayout,mpersonRelativeLayout,orderRelativeLayout,moneyoveRelativeLayout;
     private RelativeLayout.LayoutParams layoutParams;
     private LinearLayout citySelectLayout,underlineLinearLayout;
     private TextView text_infornation,text_version,text_company;
     private ImageView img_downloaddriver;
     private LinearLayout personListLinearLayout;
+    private TextView text_moneyover;
     public PersonCenterView(Context context) {
         super(context);
         init();
@@ -142,7 +143,7 @@ public class PersonCenterView extends BaseLinearLayout{
         layoutParams.setMargins(marginSize,marginSize/2,marginSize/2,marginSize/2);
         orderRelativeLayout.addView(text_infornation,layoutParams);
 
-        //请上传
+        //跳转图标
         citySelectLayout=new LinearLayout(mContext);
         citySelectLayout.setOrientation(LinearLayout.HORIZONTAL);
         layoutParams=new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT,
@@ -150,6 +151,49 @@ public class PersonCenterView extends BaseLinearLayout{
         layoutParams.setMargins(marginSize/2,marginSize/2,marginSize/2,marginSize/2);
         layoutParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
         orderRelativeLayout.addView(citySelectLayout,layoutParams);
+
+        //调整图标
+        img_downloaddriver=new ImageView(mContext);
+        img_downloaddriver.setBackgroundResource(createDrawable("xmy_cityurl"));
+        params=new LayoutParams(marginSize,marginSize);
+        citySelectLayout.addView(img_downloaddriver,params);
+        //下划线
+        personUnderline();
+
+        //余额
+        moneyoveRelativeLayout=new RelativeLayout(mContext);
+        moneyoveRelativeLayout.setBackgroundColor(Color.WHITE);
+        layoutParams=new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT);
+        //layoutParams.leftMargin=((int)(marginSize*1.5));
+        personListLinearLayout.addView(moneyoveRelativeLayout,layoutParams);
+
+        text_infornation=new TextView(mContext);
+        text_infornation.setText("余额");
+        text_infornation.setTextSize(16);
+        text_infornation.setGravity(Gravity.CENTER);
+        layoutParams=new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
+        layoutParams.setMargins(marginSize,marginSize/2,marginSize/2,marginSize/2);
+        moneyoveRelativeLayout.addView(text_infornation,layoutParams);
+
+        //跳转图标
+        citySelectLayout=new LinearLayout(mContext);
+        citySelectLayout.setOrientation(LinearLayout.HORIZONTAL);
+        layoutParams=new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT,
+                LayoutParams.WRAP_CONTENT);
+        layoutParams.setMargins(marginSize/2,marginSize/2,marginSize/2,marginSize/2);
+        layoutParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+        moneyoveRelativeLayout.addView(citySelectLayout,layoutParams);
+
+        //显示金额
+        text_moneyover=new TextView(mContext);
+        text_moneyover.setText("1000元");
+        text_moneyover.setTextSize(16);
+        text_moneyover.setGravity(Gravity.CENTER);
+        layoutParams=new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
+        layoutParams.setMargins(marginSize,marginSize/2,marginSize/2,marginSize/2);
+        layoutParams.rightMargin=marginSize/3;
+        citySelectLayout.addView(text_moneyover,layoutParams);
 
         //调整图标
         img_downloaddriver=new ImageView(mContext);
@@ -233,6 +277,9 @@ public class PersonCenterView extends BaseLinearLayout{
     public ImageView getImgBcak(){
         return baseTitleView.backIV;
     }
+    public RelativeLayout getMoneyoveRelativeLayout(){
+        return moneyoveRelativeLayout;
+    }
 
     public BaseTitleView getTitle(){
         return new BaseTitleView(mContext) {
@@ -258,10 +305,20 @@ public class PersonCenterView extends BaseLinearLayout{
             }
 
             @Override
+            public String getSetName() {
+                return null;
+            }
+
+            @Override
             public int[] getSetSize() {
                 height = (int) ( marginSize);
                 width = height;
                 return new int[] { width, height };
+            }
+
+            @Override
+            public boolean hasSetText() {
+                return false;
             }
 
             @Override

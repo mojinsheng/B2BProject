@@ -2,7 +2,6 @@ package com.from.dididache.view;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.text.InputType;
 import android.view.Gravity;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,7 +16,7 @@ import com.from.dididache.R;
  * Created by USER on 2018/5/10.
  */
 
-public class RegisterView extends BaseLinearLayout{
+public class RegisterView extends BaseLinearLayout {
     private Context context;
     private LinearLayout mContainerLayout,mListLayout;
     private LinearLayout citySelectLayout,underlineLinearLayout;
@@ -496,6 +495,16 @@ public class RegisterView extends BaseLinearLayout{
                 height = (int) ( marginSize*1.5);
                 width = (int) (marginSize*3.5);
                 return new int[] { LayoutParams.WRAP_CONTENT, height };
+            }
+
+            @Override
+            public String getSetName() {
+                return null;
+            }
+
+            @Override
+            public boolean hasSetText() {
+                return false;
             }
 
             @Override

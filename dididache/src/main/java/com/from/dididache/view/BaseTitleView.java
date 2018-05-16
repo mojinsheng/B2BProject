@@ -21,7 +21,7 @@ public abstract class BaseTitleView extends BaseRelativeLayout{
 	 * 返回按钮
 	 */
 	protected ImageView backIV;  //后退键
-	protected ImageView settingIV;  //修改、绑定
+	protected TextView settingIV;  //修改、绑定
 	/**
 	 * 标题栏
 	 */
@@ -59,16 +59,20 @@ public abstract class BaseTitleView extends BaseRelativeLayout{
 		params.addRule(RelativeLayout.CENTER_IN_PARENT);
 		this.addView(titleIV, params);
 //
-//		settingIV = new ImageView(mContext);
-//		settingIV.setBackgroundResource(BitmapUtil.createDrawable(mContext, ViewSelecter.EFUN_SET_SELECTER));
-//		params = new LayoutParams(getSetSize()[0], getSetSize()[1]);
-//		params.addRule(RelativeLayout.CENTER_VERTICAL);
-//		params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
-//		params.setMargins(0, 0, marginSize, 0);
-//		this.addView(settingIV, params);
+		settingIV = new TextView(mContext);
+		//settingIV.setBackgroundResource(BitmapUtil.createDrawable(mContext, ViewSelecter.EFUN_SET_SELECTER));
+		settingIV.setText(createString(getSetName()));
+		settingIV.setTextColor(Color.WHITE);
+		settingIV.setTextSize(20);
+		settingIV.setGravity(Gravity.CENTER);
+		params = new LayoutParams(getSetSize()[0], getSetSize()[1]);
+		params.addRule(RelativeLayout.CENTER_VERTICAL);
+		params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+		params.setMargins(0, 0, marginSize, 0);
+		this.addView(settingIV, params);
 
-		if (!hasSetButton()) {
-			backIV.setVisibility(View.GONE);
+		if (hasSetText()) {
+			settingIV.setVisibility(View.VISIBLE);
 		}
 		
 	}
@@ -98,9 +102,19 @@ public abstract class BaseTitleView extends BaseRelativeLayout{
 	 */
 	public abstract boolean hasSetButton();
 	/**
+	 * 设置按钮名称
+	 * @return
+	 */
+	public abstract String getSetName();
+	/**
 	 * 图片名称
 	 * @return
 	 */
 	public abstract String getImageViewName();
+	/**
+	* 是否包含设置按钮
+	* @return
+	*/
+	public abstract boolean hasSetText();
 	
 }

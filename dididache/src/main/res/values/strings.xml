@@ -10,4 +10,9 @@
     <string name="xmy_bindphone">绑定手机</string>
     <string name="xmy_persioninfornation">个人信息</string>
     <string name="xmy_order">订单信息</string>
+    <string name="xmy_moneyover">余额</string>
+    <string name="xmy_moneyoverinfromation">余额明细</string>
+    <string name="xmy_mymoneyover">我的零钱</string>
+    <string name="xmy_extrabtmoney">余额提现</string>
+    <string name="xmy_moneydateils">余额明细</string>
 </resources>

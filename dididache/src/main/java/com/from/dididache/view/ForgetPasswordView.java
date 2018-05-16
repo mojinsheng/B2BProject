@@ -2,9 +2,7 @@ package com.from.dididache.view;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.os.CountDownTimer;
 import android.text.InputType;
-import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -37,7 +35,6 @@ public class ForgetPasswordView extends BaseLinearLayout {
     }
 
     public void init(Context context){
-
         mContainerLayout=new LinearLayout(mContext);
         mContainerLayout.setOrientation(LinearLayout.VERTICAL);
         params=new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT);
@@ -254,6 +251,16 @@ public class ForgetPasswordView extends BaseLinearLayout {
             @Override
             public String titleName() {
                 return "xmy_forgetpwd";
+            }
+
+            @Override
+            public String getSetName() {
+                return null;
+            }
+
+            @Override
+            public boolean hasSetText() {
+                return false;
             }
 
             @Override

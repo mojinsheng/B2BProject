@@ -12,6 +12,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.amap.api.maps.AMap;
 import com.amap.api.maps.CameraUpdateFactory;
@@ -38,6 +39,7 @@ import com.amap.navifragement.RouteNaviActivity;
 import com.autonavi.tbt.TrafficFacilityInfo;
 import com.from.dididache.R;
 import com.from.dididache.view.ShuttleView;
+import com.from.molibrary.res.EfunResourceUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,7 +68,7 @@ public class ShuttlePassengerActivity extends AppCompatActivity implements AMapN
     private NaviLatLng startLatlng = new NaviLatLng(39.993537, 116.472875);
     private List<NaviLatLng> startList = new ArrayList<NaviLatLng>();
     private RouteOverLay mRouteOverlay;
-    private ImageView img_personCenter;
+    private ImageView img_back;
     private TextView btn_cancel;
     //抢单，出发，到达出发地，确认上车，到达目的地
     private Button btn_robbing,btn_outset,btn_start,btn_confirm,btn_confirmend;
@@ -89,10 +91,20 @@ public class ShuttlePassengerActivity extends AppCompatActivity implements AMapN
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
         //ShuttleView shuttleView=new ShuttleView(this);
-        setContentView(R.layout.activity_main);
+        setContentView(EfunResourceUtil.findLayoutIdByName(this,"activity_main"));
         initNavi();
-        //btn_robbing=(Button)findViewById()
-        img_personCenter=(ImageView)findViewById(R.id.xmy_personcenter);
+        //抢单
+        btn_robbing=(Button)findViewById(EfunResourceUtil.findViewIdByName(this,"btn_robbing"));
+        //出发
+        btn_outset=(Button)findViewById(EfunResourceUtil.findViewIdByName(this,"btn_outset"));
+        //到达出发点
+        btn_start=(Button)findViewById(EfunResourceUtil.findViewIdByName(this,"btn_start"));
+        //确认上车
+        btn_confirm=(Button)findViewById(EfunResourceUtil.findViewIdByName(this,"btn_confirm"));
+        //确认到达目的地
+        btn_confirmend=(Button)findViewById(EfunResourceUtil.findViewIdByName(this,"btn_confirmend")) ;
+        //返回键
+        img_back=(ImageView)findViewById(R.id.xmy_back);
         btn_cancel=(TextView)findViewById(R.id.btn_cancel);
         btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,14 +112,53 @@ public class ShuttlePassengerActivity extends AppCompatActivity implements AMapN
                 finish();
             }
         });
-        img_personCenter.setOnClickListener(new View.OnClickListener() {
+        img_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(ShuttlePassengerActivity.this,PersonCenterActivity.class);
-                startActivity(intent);
+               finish();
             }
         });
-
+        //抢到操作
+        btn_robbing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btn_robbing.setVisibility(View.GONE);
+                btn_outset.setVisibility(View.VISIBLE);
+            }
+        });
+        //出发操作
+        btn_outset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //btn_robbing.setVisibility(View.GONE);
+                btn_outset.setVisibility(View.GONE);
+                btn_start.setVisibility(View.VISIBLE);
+            }
+        });
+        //到达出发地操作
+        btn_start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btn_start.setVisibility(View.GONE);
+                btn_confirm.setVisibility(View.VISIBLE);
+            }
+        });
+        //确认上车操作
+        btn_confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btn_confirm.setVisibility(View.GONE);
+                btn_confirmend.setVisibility(View.VISIBLE);
+            }
+        });
+        //到达目的地操作
+        btn_confirmend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(ShuttlePassengerActivity.this,"结束本次行程",Toast.LENGTH_LONG).show();
+                finish();
+            }
+        });
     }
     @Override
     protected void onResume() {

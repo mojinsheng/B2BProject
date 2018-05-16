@@ -18,7 +18,7 @@ import com.from.dididache.view.PersonCenterView;
  */
 
 public class PersonCenterActivity extends Activity{
-    private RelativeLayout personRelativeLayout,orderRelativeLayout;
+    private RelativeLayout personRelativeLayout,orderRelativeLayout,moneyoveRelativeLayout;
     private LinearLayout bindLinearLayout;
     private ImageView img_back;
     @Override
@@ -26,10 +26,14 @@ public class PersonCenterActivity extends Activity{
         super.onCreate(savedInstanceState);
         PersonCenterView percenterView=new PersonCenterView(this);
         setContentView(percenterView);
+        //个人信息
         personRelativeLayout=percenterView.getPersonRelativeLayout();
         bindLinearLayout=percenterView.getLinearLayout();
         img_back=percenterView.getImgBcak();
+        //订单
         orderRelativeLayout=percenterView.getOrderRelativeLayout();
+        //余额
+        moneyoveRelativeLayout=percenterView.getMoneyoveRelativeLayout();
         personRelativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,6 +62,13 @@ public class PersonCenterActivity extends Activity{
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+        moneyoveRelativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(PersonCenterActivity.this,MoneyoveActivity.class);
+                startActivity(intent);
             }
         });
     }

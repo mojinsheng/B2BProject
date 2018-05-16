@@ -57,6 +57,7 @@ public class OrderDetailsActivity extends Activity{
         userIfon.setToDayDate("今天"+"17:00");
         userIfon.setStartPosition("天河商社");
         userIfon.setEndPostition("番禺塘步东");
+        userIfon.setMoney("50");
         userList.add(userIfon);
 
         UserIfon userIfon2=new UserIfon();
@@ -64,6 +65,7 @@ public class OrderDetailsActivity extends Activity{
         userIfon2.setToDayDate("今天"+"17:00");
         userIfon2.setStartPosition("天河商社");
         userIfon2.setEndPostition("番禺塘步东");
+        userIfon2.setMoney("50");
         userList.add(userIfon2);
 
         UserIfon userIfon3=new UserIfon();
@@ -71,6 +73,7 @@ public class OrderDetailsActivity extends Activity{
         userIfon3.setToDayDate("今天"+"17:00");
         userIfon3.setStartPosition("天河商社");
         userIfon3.setEndPostition("番禺塘步东");
+        userIfon3.setMoney("50");
         userList.add(userIfon3);
 
         UserIfon userIfon4=new UserIfon();
@@ -78,6 +81,7 @@ public class OrderDetailsActivity extends Activity{
         userIfon4.setToDayDate("今天"+"17:00");
         userIfon4.setStartPosition("天河商社");
         userIfon4.setEndPostition("番禺塘步东");
+        userIfon4.setMoney("50");
         userList.add(userIfon4);
 
         UserIfon userIfon5=new UserIfon();
@@ -85,6 +89,7 @@ public class OrderDetailsActivity extends Activity{
         userIfon5.setToDayDate("今天"+"17:00");
         userIfon5.setStartPosition("天河商社");
         userIfon5.setEndPostition("番禺塘步东");
+        userIfon5.setMoney("50");
         userList.add(userIfon5);
 
         UserIfon userIfon6=new UserIfon();
@@ -92,6 +97,7 @@ public class OrderDetailsActivity extends Activity{
         userIfon6.setToDayDate("今天"+"17:00");
         userIfon6.setStartPosition("天河商社");
         userIfon6.setEndPostition("番禺塘步东");
+        userIfon6.setMoney("50");
         userList.add(userIfon6);
 
         UserIfon userIfon7=new UserIfon();
@@ -99,6 +105,7 @@ public class OrderDetailsActivity extends Activity{
         userIfon7.setToDayDate("今天"+"17:00");
         userIfon7.setStartPosition("天河商社");
         userIfon7.setEndPostition("番禺塘步东");
+        userIfon7.setMoney("50");
         userList.add(userIfon7);
 
         UserIfon userIfon8=new UserIfon();
@@ -106,6 +113,7 @@ public class OrderDetailsActivity extends Activity{
         userIfon8.setToDayDate("今天"+"17:00");
         userIfon8.setStartPosition("天河商社");
         userIfon8.setEndPostition("番禺塘步东");
+        userIfon8.setMoney("50");
         userList.add(userIfon8);
 
 

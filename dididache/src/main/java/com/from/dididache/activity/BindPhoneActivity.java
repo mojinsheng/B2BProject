@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import com.from.dididache.view.BindPhoneView;
 
 /**
+ * 更换手机
  * Created by USER on 2018/5/12.
  */
 
